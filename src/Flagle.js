@@ -29,6 +29,14 @@ export default function Flagle() {
     }
   }
 
+  const divStyle = {
+    marginRight: "10px",
+  };
+
+  const divStyle1 = {
+    fontSize: "60%",
+  };
+
   return (
     <React.Fragment>
       <img src={flag}/>
@@ -37,11 +45,24 @@ export default function Flagle() {
         type="text"
         id="guess"
         name="guess"
+        value={guess}
         onChange={(e) => setGuess(e.target.value)}
       />
-      <br />
-      <button onClick={(e) => makeGuess()} disabled={gameOver}>Guess</button>
-      <h6>Attempts: {attempts}</h6>
+      <div>
+         <button onClick={(e) => makeGuess()} disabled={gameOver} style={divStyle}>Guess</button>
+         <button onClick={(e) => setGuess("")} disabled={gameOver}>Clear</button>
+      </div>
+      <br/>
+      <div>
+        <b>Attempts: {attempts}</b>
+        <br/>
+        <div style={divStyle1}>
+          Test
+        </div>
+      </div>
+       
+      
+      
     </React.Fragment>
   );
 }
